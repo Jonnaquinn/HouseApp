@@ -1,6 +1,6 @@
-Project Author - Jonathan Quinn
+### `Project Author - Jonathan Quinn`
 
-# Getting Started with Create React App
+# House Recommendation App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
