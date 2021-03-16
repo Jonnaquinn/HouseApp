@@ -1,0 +1,37 @@
+// @import "./_variables";
+// @import "./icons";
+// @import "./home";
+@import "./panels";
+// @import "./inputs";
+// @import "./fields";
+
+@import url("https://fonts.googleapis.com/css?family=Baloo+Chettan+2:500");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:500,600,800,bold,normal");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-style: normal;
+    // overflow: hidden;
+    font-family: Open Sans !important;
+    font-style: normal !important;
+}
+
+html {
+    font-size: 100%;
+    max-width: 1800px;
+    min-width: 1440px;
+    overflow: auto;
+    margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+
+// body {
+//     background: #F8F8F8;
+// }
+
+.TESTING-1-2-3 {
+    padding: 50px;
+}

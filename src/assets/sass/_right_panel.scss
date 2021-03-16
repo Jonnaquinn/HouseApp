@@ -1,0 +1,20 @@
+.panel {
+    &.right {
+        box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.25);
+        background-color: #f8f8f8;
+        position: relative;
+        text-align: center;
+    }
+    .not-set {
+        width: inherit;
+        .overlay {
+            position: fixed;
+            img {
+                width: 100%;
+                height: 100vh;
+                // opacity: 0.7;
+                // background-color: #b1b1b1;
+            }
+        }
+    }
+}

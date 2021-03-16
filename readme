@@ -1,0 +1,6 @@
+yarn start
+yarn start-api
+
+
+-- to open python v environment
+.\api\venv\Scripts\activate

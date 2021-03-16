@@ -1,0 +1,4 @@
+enter in place details (rent or buy, price, beds, bathrooms, parking)
+populates middle page with folium map of all datapoints - if they click populates right panel with more info including link
+
+after selecting place details on left panel will go to next stage and ask them to enter in venues/locations to filter houses by

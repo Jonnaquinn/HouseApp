@@ -1,0 +1,33 @@
+.panel {
+    &.center {
+        position: relative;
+        text-align: center;
+        .not-set {
+            border: 1px solid #ebe9e9;
+            box-sizing: border-box;
+            border-radius: 8px;
+            padding: 25px 20px;
+            font-family: Open Sans;
+            font-style: normal;
+            width: 70%;
+            margin: 38vh auto;
+
+            .title {
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 19px;
+                color: #7d7d7d;
+                padding-bottom: 25px;
+                text-align: center;
+            }
+
+            .description {
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.04em;
+                color: #6c6c6c;
+            }
+        }
+    }
+}

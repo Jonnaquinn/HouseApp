@@ -1,0 +1,221 @@
+.panel {
+    &.left {
+        text-align: center;
+        box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+        background-color: #f8f8f8;
+        position: relative;
+        .container {
+          margin: 10px 20px;
+          // text-align: left;
+          color: #6c6c6c;
+          .title {
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+          }
+          .description {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.04em;
+            //changes margin-top to include spacing for question-icon
+            margin-top: 14px;
+          }
+          .RadioButton {
+            margin-top: 10px;
+            // margin-left: -20px;
+            margin-left: -8%;
+            .radio {
+              margin-left: 15px;
+            }
+            label {
+              margin-left: 9%;
+              // margin-left: 10px;
+              font-weight: normal;
+              color: #6c6c6c;
+              line-height: 16px;
+              letter-spacing: 0.04em;
+            }
+            input {
+              margin-left: 10px;
+            }
+          }
+          .TextInput {
+            margin-top: 15px;
+            width: 100%;
+            height: 30px;
+            background: #FFFFFF;
+            border: 1px solid #EBE9E9;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+            outline: none;
+            input {
+              border: 0;
+              height: 30px;
+              width: 100%;
+              outline: none;
+              resize: none;
+            }
+            textarea {
+              border: 0;
+              height: 30px;
+              width: 100%;
+              outline: none;
+              resize: none;
+            }
+            ::-webkit-input-placeholder {
+              text-align: center;
+           }
+          }
+        }
+        .TextInputHalfLeft {
+          margin-top: 15px;
+          width: 45%;
+          height: 30px;
+          background: #FFFFFF;
+          border: 1px solid #EBE9E9;
+          box-sizing: border-box;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 4px;
+          outline: none;
+          input {
+            border: 0;
+            height: 30px;
+            width: 100%;
+            outline: none;
+            resize: none;
+          }
+          textarea {
+            border: 0;
+            height: 30px;
+            width: 100%;
+            outline: none;
+            resize: none;
+          }
+          ::-webkit-input-placeholder {
+            text-align: center;
+         }
+        }
+        .TextInputHalfRight {
+          // margin-top: -7%;
+          margin-top: -30px;
+          margin-left: 55%;
+          width: 45%;
+          height: 30px;
+          background: #FFFFFF;
+          border: 1px solid #EBE9E9;
+          box-sizing: border-box;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 4px;
+          outline: none;
+          input {
+            border: 0;
+            height: 30px;
+            width: 100%;
+            outline: none;
+            resize: none;
+          }
+          textarea {
+            border: 0;
+            height: 30px;
+            width: 100%;
+            outline: none;
+            resize: none;
+          }
+          ::-webkit-input-placeholder {
+            text-align: center;
+         }
+        }
+        .panel-buttons {
+          z-index: 998;
+          position: absolute;
+          bottom: 18px;
+          left: 20px;
+
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          width: calc(100% - 40px);
+          display: flex;
+          justify-content: space-between;
+          div {
+              padding: 10px 0;
+              height: 36px;
+              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+              border-radius: 4px;
+              box-sizing: border-box;
+
+              &:hover {
+                  cursor: pointer;
+                  filter: brightness(110%);
+              }
+          }
+          .ok-button {
+            bottom: 0;
+            position: absolute;
+            width: calc((100% - (30px + 10px)) / 4);
+            height: 36px;
+            left: 75%;
+            background: #f8f8f8;
+            border: 1px solid #616161;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+
+            color: #616161;
+            text-align: center;
+
+            &:hover {
+                cursor: pointer;
+                filter: brightness(110%);
+            }
+          }
+          .cancel-button {
+            bottom: 0;
+            position: absolute;
+            width: calc((100% - (30px + 10px)) / 4);
+            height: 36px;
+
+            background: #f8f8f8;
+            border: 1px solid #616161;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+
+            color: #616161;
+            text-align: center;
+
+            &:hover {
+                cursor: pointer;
+                filter: brightness(110%);
+            }
+          }
+        }
+        .logo {
+            height: 10vh;
+            pointer-events: none;
+            // float: left;
+          }
+          @media (prefers-reduced-motion: no-preference) {
+            .logo {
+              animation: logo-spin infinite 20s linear;
+            }
+          }
+          @keyframes logo-spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+        }
+    }
+}

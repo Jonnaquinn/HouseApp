@@ -1,0 +1,23 @@
+@import "./left_panel";
+@import "./center_panel";
+@import "./right_panel";
+
+.panel {
+    float: left;
+    height: 100vh;
+
+    &.left,
+    &.right {
+        width: 27%;
+    }
+
+    &.center {
+        width: 46%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
