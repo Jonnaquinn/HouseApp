@@ -1,6 +1,9 @@
 import React from "react";
+import { UseManager, useManagerDispatch } from "../hooks/useManagerStore"
 
 function Form() {
+  const managerDispatch = useManagerDispatch();
+  
   let [state, setState] = React.useState({
     level: "sale",
     minPrice: "",
@@ -47,11 +50,10 @@ function Form() {
       ...state,
       [e.target.name]: value
     });
-    console.log(e.target.name, value)
+    // console.log(e.target.name, value)
   }
 
   function handleSubmit() {
-    console.log("making request")
     fetch("/result", {
       method: "POST",
       cache: "no-cache",
@@ -73,6 +75,8 @@ function Form() {
               console.log("ok button")
               console.log(JSON.stringify(state))
               handleSubmit();
+              managerDispatch({ type: "submit", value: {formSubmit: true} })
+              managerDispatch({ type: "submitClick" })
             }}
         >
             Ok
@@ -80,6 +84,7 @@ function Form() {
             <div className="cancel-button"
             onClick={() => {
               console.log("cancel button")
+              managerDispatch({ type: "submit", value: {formSubmit: false} })
               reset();
             }}
         >

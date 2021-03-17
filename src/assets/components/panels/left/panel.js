@@ -1,9 +1,8 @@
 import React, {useState, useEffect } from 'react';
 import logo from "../../../images/logo.svg"
-// import RadioButton from "../../inputs/radiobutton"
-// import TextInput from "../../inputs/textinput"
-// import HalfTextInput from "../../inputs/halftextinput"
 import Form from "../../inputs/form"
+import { UseManager, useManagerDispatch } from "../../hooks/useManagerStore"
+
 
 // function Buttons() {
 //     // do somthing
@@ -29,6 +28,7 @@ import Form from "../../inputs/form"
 // }
 
 export default function LeftPanel() {
+    const managerDispatch = useManagerDispatch();
     return (  
             <div id="panel.left" className="panel left">
                 <img src={logo} className="logo" alt="logo" />
