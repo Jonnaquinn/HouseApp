@@ -1,8 +1,10 @@
 import React from "react";
-import { UseManager, useManagerDispatch } from "../hooks/useManagerStore"
+import { useManager, useManagerDispatch } from "../hooks/useManagerStore"
 
-function Form() {
+export default function Form() {
   const managerDispatch = useManagerDispatch();
+  let { formSubmit, formClicked, iFrameClicked } = useManager();
+
   
   let [state, setState] = React.useState({
     level: "sale",
@@ -19,6 +21,9 @@ function Form() {
     maxParks: "",
     surroundingsuburbs: "False",
     surround: "",
+    limit: "",
+    radius: "",
+    venuecategory: "",
   })
 
   function reset() {
@@ -37,8 +42,19 @@ function Form() {
       maxParks: "",
       surroundingsuburbs: "False",
       surround: "",
+      limit: "",
+      radius: "",
+      venuecategory: "",
     })
   }
+  // function to make inputs read only when needed
+  // if (formSubmit == true) {
+  //   console.log(formSubmit)
+  //   document.getElementById("minPrice").setAttribute("readOnly", true);
+  // } else if (formSubmit == false) {
+  //   document.getElementById("minPrice").removeAttribute("readonly");
+  // }
+
 
   // React.useEffect(() => {
   //   setState(state);
@@ -54,7 +70,7 @@ function Form() {
   }
 
   function handleSubmit() {
-    fetch("/result", {
+    fetch("/", {
       method: "POST",
       cache: "no-cache",
       headers: {
@@ -77,6 +93,8 @@ function Form() {
               handleSubmit();
               managerDispatch({ type: "submit", value: {formSubmit: true} })
               managerDispatch({ type: "submitClick" })
+              // test1();
+              // managerDispatch({ type: "iFrameClick", value: {iFrameClicked: true} })
             }}
         >
             Ok
@@ -108,7 +126,7 @@ function Form() {
         </label>
       </div>
       <div className="TextInputHalfLeft">
-        <input placeholder="-- Min Price --" type="text" autoComplete="none" name="minPrice" value={state.minPrice} onChange={handleChange}/>
+        <input id='minPrice' placeholder="-- Min Price --" type="text" autoComplete="none" name="minPrice" value={state.minPrice} onChange={handleChange}/>
       </div>
       <div className="TextInputHalfRight">
         <input placeholder="-- Max Price --" type="text" name="maxPrice" value={state.maxPrice} onChange={handleChange}/>
@@ -157,12 +175,32 @@ function Form() {
       {state.surroundingsuburbs === "True" && (
         <div className="TextInput" style={{marginTop: '10px'}}>
           <input placeholder="  -- Radius in Metres --" type="text" autoComplete="none" name="surround" value={state.surround} onChange={handleChange}/>
-      </div>
+        </div>
       )}
+      {/* {formSubmit && (
+        <div>
+            <hr style={{marginTop: '15px', marginBottom: '15px'}}></hr>
+            <h1 className="title">Filter Listings</h1>
+            <p className="description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+            </p>
+            <hr style={{marginTop: '17px', marginBottom: '17px'}}></hr>
+            <div className="TextInputHalfLeft">
+              <input placeholder="-- Limit --" type="text" autoComplete="none" name="limit" value={state.limit} onChange={handleChange}/>
+            </div>
+            <div className="TextInputHalfRight">
+              <input placeholder="-- Radius --" type="text" name="radius" value={state.radius} onChange={handleChange}/>
+          </div>
+          <div className="TextInput">
+            <input placeholder="-- Venue Category --" type="text" autoComplete="none" name="venuecategory" value={state.venuecategory} onChange={handleChange}/>
+          </div>
+        </div>
+      )} */}
       <Buttons></Buttons>
     </form>
   );
 }
-export default Form;
+// export default Form;
 
 // {/* <textarea name="bio" value={state.bio} onChange={handleChange} /> */}

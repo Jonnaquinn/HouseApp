@@ -1,20 +1,27 @@
 import React, {useState, useEffect } from 'react';
 import { useManager, UseManager, useManagerDispatch } from "../../hooks/useManagerStore"
-
+import Map from "./map"
 // import { UseManager, useManagerDispatch } from "../../hooks/useManagerStore"
 // import Iframe from 'react-iframe';
 export default function CenterPanel(testing = false) {
-    const { formSubmit, formClicked } = useManager();
+    const { formSubmit, formClicked, iFrameClicked } = useManager();
     const managerDispatch = useManagerDispatch();
     // React.useEffect(() => {
     // }, [formClicked]);
+    // window.addEventListener('blur',function(){
+    //     if(document.activeElement.id == 'map'){
+    //         managerDispatch({ type: "iFrameClick", value: {formSubmit: true} })
+    //         console.log('clicked')
+    //     }
+    // });
     return (
         <div 
         id="panel.center"
         className="panel center">
             {formSubmit ? (
                 <div className="map">
-                    <iframe key={formClicked} id="map" src="http://localhost:5000/" width="90%" height="35%"></iframe>
+                    {/* <Map style={{width: '10px'}}></Map> */}
+                    <iframe key={formClicked} id="map" src="http://localhost:5000/domain_api" width="90%" height="35%"></iframe>
                 </div>
             ) : (
                 <div className="not-set">

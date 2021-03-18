@@ -3,6 +3,7 @@ import makeStore from "./makeStore";
 const initialState = {
     formSubmit: false,
     formClicked: false,
+    iFrameClicked: false,
 };
 
 const managerReducer = (state, action) => {
@@ -19,6 +20,12 @@ const managerReducer = (state, action) => {
             return {
                 ...state,
                 formClicked: !state.formClicked,
+            };
+        case "iFrameClick":
+            console.log(state.iFrameClicked)
+            return {
+                ...state,
+                iFrameClicked: action.value.iFrameClicked,
             };
         default:
             throw new Error("Unknown action!", action);
