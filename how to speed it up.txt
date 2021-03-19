@@ -1,0 +1,12 @@
+if user input string is in venue category string = return 
+
+https://api.foursquare.com/v2/venues/explore?&client_id=XX2RK0KHBAX412Q053MRATKP3QPOXPJXNC2OXXQFFXKPCOTM&client_secret=GW1HUCQ4GYM5PMXUQPZBZTBYDUP5AGIVLRDO04VENXKOXYF4&v=20181206&ll=-37.84178,145.2596&ll=-37.83928,145.264664&radius=500&limit=100
+
+
+https://api.foursquare.com/v2/venues/explore?&client_id=XX2RK0KHBAX412Q053MRATKP3QPOXPJXNC2OXXQFFXKPCOTM&client_secret=GW1HUCQ4GYM5PMXUQPZBZTBYDUP5AGIVLRDO04VENXKOXYF4&v=20181206&ll=-37.84178,145.2596&radius=500&limit=100
+
+
+
+7/639 Mountain Highway, Bayswater -37.84178 145.2596
+
+31 Sherman Drive, Bayswater -37.8285 145.299561

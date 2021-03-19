@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import { useManager, UseManager, useManagerDispatch } from "../../hooks/useManagerStore"
-import Map from "./map"
+// import Map from "./map"
 // import { UseManager, useManagerDispatch } from "../../hooks/useManagerStore"
 // import Iframe from 'react-iframe';
 export default function CenterPanel(testing = false) {
@@ -14,6 +14,14 @@ export default function CenterPanel(testing = false) {
     //         console.log('clicked')
     //     }
     // });
+    function test() {
+        // console.log('yo')
+        if (document.getElementById("map")) {
+            // console.log(document.getElementById("popup").textContent)
+            console.log(document.getElementById('map').contentWindow.document.getElementById('popup'))
+            console.log('yo12')
+        }
+    }
     return (
         <div 
         id="panel.center"
@@ -21,7 +29,7 @@ export default function CenterPanel(testing = false) {
             {formSubmit ? (
                 <div className="map">
                     {/* <Map style={{width: '10px'}}></Map> */}
-                    <iframe key={formClicked} id="map" src="http://localhost:5000/domain_api" width="90%" height="35%"></iframe>
+                    <iframe sandbox="allow-forms allow-scripts allow-same-origin allow-downloads" key={formClicked} id="map" src="http://localhost:5000/domain_api" width="90%" height="35%"></iframe>
                 </div>
             ) : (
                 <div className="not-set">

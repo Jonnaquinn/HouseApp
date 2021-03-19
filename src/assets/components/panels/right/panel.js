@@ -6,12 +6,49 @@ import { useManager, UseManager, useManagerDispatch } from "../../hooks/useManag
 
 export default function RightPanel(testing = false) {
     const { formSubmit, formClicked, iFrameClicked } = useManager();
+    const managerDispatch = useManagerDispatch();
     let [state, setState] = React.useState({
         limit: "",
         radius: "",
         venuecategory: "",
       })
-      
+      function reset() {
+        setState({
+          limit: "",
+          radius: "",
+          venuecategory: "",
+        })
+      }
+    function Buttons() {
+    // do somthing
+    
+    return (
+        <div className="panel-buttons">
+            <div className="ok-button"
+            onClick={() => {        
+                console.log("ok button")
+                console.log(JSON.stringify(state))
+                handleSubmit();
+                managerDispatch({ type: "submit", value: {formSubmit: true} })
+                managerDispatch({ type: "submitClick" })
+                // test1();
+                // managerDispatch({ type: "iFrameClick", value: {iFrameClicked: true} })
+            }}
+        >
+            Ok
+            </div>
+            <div className="cancel-button"
+            onClick={() => {
+                console.log("cancel button")
+                // managerDispatch({ type: "submit", value: {formSubmit: false} })
+                reset();
+            }}
+        >
+            Clear
+            </div>
+        </div>
+    )
+    }
     function handleChange(e) {
         const value = e.target.value;
         setState({
@@ -20,6 +57,18 @@ export default function RightPanel(testing = false) {
         });
         // console.log(e.target.name, value)
     }
+
+    function handleSubmit() {
+        fetch("/filter", {
+          method: "POST",
+          cache: "no-cache",
+          headers: {
+            "content_type":"application/json",
+            'Accept': 'application/json'
+          },
+          body:JSON.stringify(state)
+        })
+      }
 
     if (formSubmit) {
         return (
@@ -43,6 +92,7 @@ export default function RightPanel(testing = false) {
                             <input placeholder="-- Venue Category --" type="text" autoComplete="none" name="venuecategory" value={state.venuecategory} onChange={handleChange}/>
                         </div>
                         </div>
+                    <Buttons></Buttons>
                 </div>
             </div>
         )
