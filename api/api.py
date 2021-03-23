@@ -75,8 +75,13 @@ def getNearbyVenues(json_all_pages, radius, LIMIT, venue_category):
                   'Venue Longitude', 
                   'Venue Category']
     my_venues = nearby_venues.groupby(['Address', 'Address Latitude', 'Address Longitude'])['Venue Category'].apply(list).reset_index()
-    my_venues = my_venues[my_venues['Venue Category'].map(set(['Gym']).issubset)]
-    print(my_venues)
+    # handle cafe string
+    venue_category = venue_category.replace('Cafe', 'Café')
+    venue_category = venue_category.split(' ')
+    my_venues = my_venues[my_venues['Venue Category'].map(set(venue_category).issubset)]
+    # my_venues = [i for i, x in enumerate(my_venues['Venue Category']) if x == venue_category]
+    # filter(lambda element: venue_category in element, my_venues
+    print('LOOKING FOR {}'.format(venue_category), my_venues)
     # my_venues.to_csv('hello')
     end = time.time()
     print('time taken', end - start)                         

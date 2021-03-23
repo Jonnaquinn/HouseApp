@@ -8,7 +8,7 @@ export default function RightPanel(testing = false) {
     const { formSubmit, formClicked, iFrameClicked } = useManager();
     const managerDispatch = useManagerDispatch();
     let [state, setState] = React.useState({
-        limit: "",
+        limit: "1000",
         radius: "",
         venuecategory: "",
       })

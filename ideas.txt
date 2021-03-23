@@ -5,3 +5,11 @@ after selecting place details on left panel will go to next stage and ask them t
 
 
 next steps - grab longitude and latitude from json to build a folium map and create it in the center panel
+
+
+Make API call to grab all venues within certain distance of first element in domain return json, leverage the coordinates to get the distance between every single listing result
+
+grab coordinates of suburb + radius of incoming react string, get all venues and match them to listings?
+
+if right panel strings = '', dont do it
+
